@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Swinopis.Models;
@@ -14,6 +14,9 @@ namespace Swinopis
         public MainForm()
         {
             InitializeComponent();
+
+            var defaultPigDb = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), @"..\..\..\PigDB"));
+            dlgDatabase.SelectedPath = defaultPigDb;
 
             pigEditorForm = new PigEditorForm();
         }

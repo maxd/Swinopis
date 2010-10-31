@@ -60,6 +60,24 @@ namespace Swinopis
         {
             var pig = (Pig) lvPigs.SelectedItem;
 
+            EditPig(pig);
+        }
+
+        private void lvPigs_DoubleClick(object sender, EventArgs e)
+        {
+            if (lvPigs.Items.Count != 0)
+            {
+                var p = lvPigs.PointToClient(Cursor.Position);
+                var index = lvPigs.IndexFromPoint(p);
+
+                var pig = (Pig) lvPigs.Items[index];
+
+                EditPig(pig);
+            }
+        }
+
+        private void EditPig(Pig pig)
+        {
             if (pig != null)
             {
                 pigEditorForm.Pig = pig;

@@ -28,10 +28,7 @@ namespace Swinopis
             {
                 var pig = (Pig) Items[e.Index];
 
-
-
                 g.DrawImage(Resources.pig_icon, IconRect(e.Bounds));
-
 
                 g.DrawString(pig.Name, Font, Brushes.Black, NameRect(e.Bounds));
                 g.DrawString(pig.Description, Font, Brushes.Gray, DescriptionRect(e.Bounds));

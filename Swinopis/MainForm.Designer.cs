@@ -471,6 +471,7 @@
             // 
             this.actHelp.Image = global::Swinopis.Properties.Resources.help;
             this.actHelp.Text = "Help...";
+            this.actHelp.Execute += new System.EventHandler(this.actHelp_Execute);
             // 
             // actAuthors
             // 

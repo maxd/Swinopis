@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -152,6 +153,11 @@ namespace Swinopis
         {
             var form = new AboutBox();
             form.Show();
+        }
+
+        private void actHelp_Execute(object sender, EventArgs e)
+        {
+            Process.Start("http://xkcd.com/293/");
         }
     }
 }

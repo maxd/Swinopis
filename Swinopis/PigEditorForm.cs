@@ -36,8 +36,8 @@ namespace Swinopis
                 txtDescription.Text = pig.Description;
                 ctlDateOfBirth.Value = pig.DateOfBirth;
                 udWeight.Value = pig.Weight;
-                srSpeed.Rating = pig.Fun;
-                srFunny.Rating = pig.Speed;
+                srSpeed.Rating = pig.Speed;
+                srFunny.Rating = pig.Fun;
                 if (!string.IsNullOrEmpty(pig.Image))
                     picPicture.Load(pig.Image);
             }

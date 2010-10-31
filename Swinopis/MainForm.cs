@@ -144,5 +144,11 @@ namespace Swinopis
         {
             MessageBox.Show("Зделаю завтра...");
         }
+
+        private void mnuAbout_Click(object sender, EventArgs e)
+        {
+            var form = new AboutBox();
+            form.Show();
+        }
     }
 }

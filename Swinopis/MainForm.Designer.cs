@@ -250,7 +250,7 @@
             this.alMain.SetAction(this.mnuHelp, this.actHelp);
             this.mnuHelp.Image = global::Swinopis.Properties.Resources.help;
             this.mnuHelp.Name = "mnuHelp";
-            this.mnuHelp.Size = new System.Drawing.Size(116, 22);
+            this.mnuHelp.Size = new System.Drawing.Size(152, 22);
             this.mnuHelp.Text = "Help...";
             // 
             // toolStripMenuItem2
@@ -263,15 +263,16 @@
             this.alMain.SetAction(this.mnuAuthors, this.actAuthors);
             this.mnuAuthors.Image = global::Swinopis.Properties.Resources.authors;
             this.mnuAuthors.Name = "mnuAuthors";
-            this.mnuAuthors.Size = new System.Drawing.Size(116, 22);
+            this.mnuAuthors.Size = new System.Drawing.Size(152, 22);
             this.mnuAuthors.Text = "Authors";
             // 
             // mnuAbout
             // 
             this.alMain.SetAction(this.mnuAbout, this.actAbout);
             this.mnuAbout.Name = "mnuAbout";
-            this.mnuAbout.Size = new System.Drawing.Size(116, 22);
+            this.mnuAbout.Size = new System.Drawing.Size(152, 22);
             this.mnuAbout.Text = "About";
+            this.mnuAbout.Click += new System.EventHandler(this.mnuAbout_Click);
             // 
             // tbrMain
             // 

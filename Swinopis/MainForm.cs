@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using Swinopis.Models;
 
@@ -108,6 +110,39 @@ namespace Swinopis
                 lvPigs.Items.Add(pig);
 
             lblPigCount.Text = string.Format("Pigs:{0}", lvPigs.Items.Count);
+        }
+
+        private void actAvgWeight_Execute(object sender, EventArgs e)
+        {
+            var pigs = lvPigs.SelectedItems.Cast<Pig>().ToArray();
+
+            var sum = pigs.Sum(pig => pig.Weight);
+            var count = pigs.Count();
+
+            var message = string.Format("Average weight is {0}", sum / count);
+            MessageBox.Show(message, "Average Weight", MessageBoxButtons.OKCancel);
+        }
+
+        private void actMinWeight_Execute(object sender, EventArgs e)
+        {
+            var pig = lvPigs.SelectedItems.Cast<Pig>().OrderBy(p => p.Weight).First();
+
+            var message = string.Format("The pig '{0}' have minimal weight {1}", pig.Name, pig.Weight);
+            MessageBox.Show(message, "Average Weight", MessageBoxButtons.OK);
+        }
+
+        private void actMaxWeight_Execute(object sender, EventArgs e)
+        {
+            var pig = lvPigs.SelectedItems.Cast<Pig>().OrderByDescending(p => p.Weight).First();
+
+            var message = string.Format("The pig '{0}' have maximal weight {1}", pig.Name, pig.Weight);
+            MessageBox.Show(message, "Maximal Weight", MessageBoxButtons.OK);
+
+        }
+
+        private void actExport_Execute(object sender, EventArgs e)
+        {
+            MessageBox.Show("Зделаю завтра...");
         }
     }
 }

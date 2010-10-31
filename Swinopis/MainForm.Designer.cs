@@ -36,7 +36,6 @@
             this.mnuSave = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuExport = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuImport = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAction = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +60,7 @@
             this.tbtEditItem = new System.Windows.Forms.ToolStripButton();
             this.tbtDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tbtUnknown = new System.Windows.Forms.ToolStripButton();
             this.sbMain = new System.Windows.Forms.StatusStrip();
             this.lblPigCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.alMain = new Crad.Windows.Forms.Actions.ActionList();
@@ -69,7 +68,6 @@
             this.actOpen = new Crad.Windows.Forms.Actions.Action();
             this.actSave = new Crad.Windows.Forms.Actions.Action();
             this.actExport = new Crad.Windows.Forms.Actions.Action();
-            this.actImport = new Crad.Windows.Forms.Actions.Action();
             this.actExit = new Crad.Windows.Forms.Actions.Action();
             this.actNewItem = new Crad.Windows.Forms.Actions.Action();
             this.actEditItem = new Crad.Windows.Forms.Actions.Action();
@@ -80,13 +78,12 @@
             this.actHelp = new Crad.Windows.Forms.Actions.Action();
             this.actAuthors = new Crad.Windows.Forms.Actions.Action();
             this.actAbout = new Crad.Windows.Forms.Actions.AboutAction();
+            this.actUnknown = new Crad.Windows.Forms.Actions.Action();
             this.cmnuNewItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmnuEditItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmnuDeleteItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dlgDatabase = new System.Windows.Forms.FolderBrowserDialog();
             this.cmnuMain = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tbtUnknown = new System.Windows.Forms.ToolStripButton();
-            this.actUnknown = new Crad.Windows.Forms.Actions.Action();
             this.lvPigs = new Swinopis.PigList();
             this.mmMain.SuspendLayout();
             this.tbrMain.SuspendLayout();
@@ -117,7 +114,6 @@
             this.mnuSave,
             this.toolStripMenuItem1,
             this.mnuExport,
-            this.mnuImport,
             this.toolStripMenuItem3,
             this.mnuExit});
             this.mnuFile.Name = "mnuFile";
@@ -129,7 +125,7 @@
             this.alMain.SetAction(this.mnuNew, this.actNew);
             this.mnuNew.Image = global::Swinopis.Properties.Resources._new;
             this.mnuNew.Name = "mnuNew";
-            this.mnuNew.Size = new System.Drawing.Size(119, 22);
+            this.mnuNew.Size = new System.Drawing.Size(116, 22);
             this.mnuNew.Text = "New";
             // 
             // mnuOpen
@@ -137,7 +133,7 @@
             this.alMain.SetAction(this.mnuOpen, this.actOpen);
             this.mnuOpen.Image = global::Swinopis.Properties.Resources.open;
             this.mnuOpen.Name = "mnuOpen";
-            this.mnuOpen.Size = new System.Drawing.Size(119, 22);
+            this.mnuOpen.Size = new System.Drawing.Size(116, 22);
             this.mnuOpen.Text = "Open...";
             // 
             // mnuSave
@@ -145,39 +141,32 @@
             this.alMain.SetAction(this.mnuSave, this.actSave);
             this.mnuSave.Image = global::Swinopis.Properties.Resources.save;
             this.mnuSave.Name = "mnuSave";
-            this.mnuSave.Size = new System.Drawing.Size(119, 22);
+            this.mnuSave.Size = new System.Drawing.Size(116, 22);
             this.mnuSave.Text = "Save";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(116, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(113, 6);
             // 
             // mnuExport
             // 
             this.alMain.SetAction(this.mnuExport, this.actExport);
             this.mnuExport.Name = "mnuExport";
-            this.mnuExport.Size = new System.Drawing.Size(119, 22);
+            this.mnuExport.Size = new System.Drawing.Size(116, 22);
             this.mnuExport.Text = "Export...";
-            // 
-            // mnuImport
-            // 
-            this.alMain.SetAction(this.mnuImport, this.actImport);
-            this.mnuImport.Name = "mnuImport";
-            this.mnuImport.Size = new System.Drawing.Size(119, 22);
-            this.mnuImport.Text = "Import...";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(116, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(113, 6);
             // 
             // mnuExit
             // 
             this.alMain.SetAction(this.mnuExit, this.actExit);
             this.mnuExit.Image = global::Swinopis.Properties.Resources.exit;
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(119, 22);
+            this.mnuExit.Size = new System.Drawing.Size(116, 22);
             this.mnuExit.Text = "Exit...";
             // 
             // mnuAction
@@ -295,7 +284,6 @@
             this.tbtEditItem,
             this.tbtDeleteItem,
             this.toolStripSeparator1,
-            this.toolStripSeparator3,
             this.tbtUnknown});
             this.tbrMain.Location = new System.Drawing.Point(0, 24);
             this.tbrMain.Name = "tbrMain";
@@ -373,10 +361,13 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripSeparator3
+            // tbtUnknown
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.alMain.SetAction(this.tbtUnknown, this.actUnknown);
+            this.tbtUnknown.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbtUnknown.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtUnknown.Name = "tbtUnknown";
+            this.tbtUnknown.Size = new System.Drawing.Size(23, 22);
             // 
             // sbMain
             // 
@@ -401,7 +392,6 @@
             this.alMain.Actions.Add(this.actHelp);
             this.alMain.Actions.Add(this.actExit);
             this.alMain.Actions.Add(this.actExport);
-            this.alMain.Actions.Add(this.actImport);
             this.alMain.Actions.Add(this.actAvgWeight);
             this.alMain.Actions.Add(this.actMinWeight);
             this.alMain.Actions.Add(this.actMaxWeight);
@@ -435,10 +425,7 @@
             // actExport
             // 
             this.actExport.Text = "Export...";
-            // 
-            // actImport
-            // 
-            this.actImport.Text = "Import...";
+            this.actExport.Execute += new System.EventHandler(this.actExport_Execute);
             // 
             // actExit
             // 
@@ -467,14 +454,17 @@
             // actAvgWeight
             // 
             this.actAvgWeight.Text = "Avg. Weight";
+            this.actAvgWeight.Execute += new System.EventHandler(this.actAvgWeight_Execute);
             // 
             // actMinWeight
             // 
             this.actMinWeight.Text = "Min Weight";
+            this.actMinWeight.Execute += new System.EventHandler(this.actMinWeight_Execute);
             // 
             // actMaxWeight
             // 
             this.actMaxWeight.Text = "Max Weight";
+            this.actMaxWeight.Execute += new System.EventHandler(this.actMaxWeight_Execute);
             // 
             // actHelp
             // 
@@ -527,14 +517,6 @@
             this.cmnuMain.Name = "cmnuMain";
             this.cmnuMain.Size = new System.Drawing.Size(117, 70);
             // 
-            // tbtUnknown
-            // 
-            this.alMain.SetAction(this.tbtUnknown, this.actUnknown);
-            this.tbtUnknown.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbtUnknown.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtUnknown.Name = "tbtUnknown";
-            this.tbtUnknown.Size = new System.Drawing.Size(23, 22);
-            // 
             // lvPigs
             // 
             this.lvPigs.ContextMenuStrip = this.cmnuMain;
@@ -543,6 +525,7 @@
             this.lvPigs.ItemHeight = 32;
             this.lvPigs.Location = new System.Drawing.Point(0, 49);
             this.lvPigs.Name = "lvPigs";
+            this.lvPigs.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lvPigs.Size = new System.Drawing.Size(870, 420);
             this.lvPigs.TabIndex = 4;
             this.lvPigs.DoubleClick += new System.EventHandler(this.lvPigs_DoubleClick);
@@ -593,7 +576,6 @@
         private Crad.Windows.Forms.Actions.Action actHelp;
         private Crad.Windows.Forms.Actions.Action actExit;
         private Crad.Windows.Forms.Actions.Action actExport;
-        private Crad.Windows.Forms.Actions.Action actImport;
         private Crad.Windows.Forms.Actions.Action actAvgWeight;
         private Crad.Windows.Forms.Actions.Action actMinWeight;
         private Crad.Windows.Forms.Actions.Action actMaxWeight;
@@ -613,7 +595,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuSave;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mnuExport;
-        private System.Windows.Forms.ToolStripMenuItem mnuImport;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
         private System.Windows.Forms.FolderBrowserDialog dlgDatabase;
@@ -631,7 +612,6 @@
         private System.Windows.Forms.ToolStripButton tbtEditItem;
         private System.Windows.Forms.ToolStripButton tbtDeleteItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton tbtUnknown;
         private Crad.Windows.Forms.Actions.Action actUnknown;
     }

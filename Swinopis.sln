@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crad.Windows.Forms.Actions"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThirstyCrow.WinForms.Controls", "ThirstyCrow.WinForms.Controls\ThirstyCrow.WinForms.Controls.csproj", "{513FE6E6-5832-414B-BBB8-60FC4F85DC35}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{249C8DBA-8D54-4429-BEAD-84D9E3B5C7E2}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
